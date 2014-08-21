@@ -10,10 +10,12 @@
         <title>SSCJP</title>
     </head>
     <body>
+        
+        <!-- PORTADA -->
+
         <div data-role="page" id="portada">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
-                <a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-right" id="show_menu">MENÚ</a>
             </div>
             <div role="main" class="ui-content">
                 <ul id="listado_portada">
@@ -22,17 +24,37 @@
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#" class="ico-portada active">Portada</a>
+                <a href="#listados" class="ico-noticias">Noticias</a>
+                <a href="#listados" class="ico-articulos">Artículos</a>
+                <a href="#listados" class="ico-tareas">Tareas</a>
+            </div>
+        </div>
+
+        <!-- LISTADOS -->
+        
+        <div data-role="page" id="listados">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+            </div>
+            <div role="main" class="ui-content">
+                <ul id="listados_lista">
+                    
+                 </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <a href="#portada" class="ico-portada">Portada</a>
                 <a href="#" class="ico-noticias">Noticias</a>
                 <a href="#" class="ico-articulos">Artículos</a>
                 <a href="#" class="ico-tareas">Tareas</a>
             </div>
         </div>
 
-        <div data-role="page" class="changePage" id="noticia">
+        <!-- DETALLE NOTICIA -->
+
+        <div data-role="page" id="noticia">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ui-btn ui-btn-inline ui-btn-left" id="back_portada" data-direction="reverse"></a>
                 <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
-                <a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-right" id="show_menu">MENÚ</a>
             </div>
             <div role="main" class="ui-content">
                 <article id="leer_noticia">
@@ -41,44 +63,31 @@
             </div>
             <div data-role="footer" id="noticia_footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href='#imagenes' class='ico-imagenes'>Im&aacute;genes</a>
-                <a href='#' class='ico-video'>Video</a>
-                <a href='#' class='ico-audio'>Audio</a>
+                <a href='#video_popup' class='ico-video' data-rel="popup" data-position-to="window" data-transition="pop">Video</a>
+                <a href='#audio_popup' class='ico-audio' data-rel="popup" data-position-to="window" data-transition="pop">Audio</a>
                 <a href='#' class='ico-compartir'>Compartir</a>
+
+                <div data-role="popup" id="video_popup" data-overlay-theme="b" data-theme="b">
+                    <div id="videoplayer"></div>
+                </div>
+                <div data-role="popup" id="audio_popup" data-overlay-theme="b" data-theme="b">
+                    <div id="audioplayer"></div>
+                </div>
             </div>
         </div>
 
-        <div data-role="page" class="changePage" id="imagenes">
+        <!-- GALERIA -->
+
+        <div data-role="page" id="imagenes">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#noticia" class="ui-btn ui-btn-inline ui-btn-left" id="back_portada" data-direction="reverse"></a>
                 <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
-                <a href="#myPanel" class="ui-btn ui-btn-inline ui-btn-right" id="show_menu">MENÚ</a>
             </div>
             <div role="main" class="ui-content">
                 <div class="galeria">
                 </div>
             </div>
         </div>
-
-        <div data-role="panel" id="myPanel" data-position="right" data-display="reveal">
-            <div id="pNoticias">
-                <h2>Noticias<i></i></h2>
-                <ul id="panel_noticias">
-                
-                </ul>
-            </div>
-            <div id="pArticulos">
-                <h2>Artículos<i></i></h2>
-               <ul id="panel_articulos">
-                  
-                </ul>
-            </div>
-            <div id="pInfo">
-                <h2>Informaci&oacute;n<i></i></h2>
-                <ul id="panel_info">
-                    <li>SSCJP</li>
-                </ul>
-            </div>
-        </div> 
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
