@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ember.siervas" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>siervasApp</name>
+<widget id="org.siervaspadreyermo.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SSCJP APP</name>
     <description>
         Aplicacion de noticias de las Siervas del Sagrado corazon de Jesus y de los Pobres
     </description>
