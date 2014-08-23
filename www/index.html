@@ -15,7 +15,7 @@
 
         <div data-role="page" id="portada">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
                 <ul id="listado_portada">
@@ -27,6 +27,7 @@
                 <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
                 <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
                 <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+                <a href="#seccion_info" class="ico-info">Info</a>
             </div>
         </div>
 
@@ -34,18 +35,17 @@
         
         <div data-role="page" id="seccion_noticias">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <ul id="listado_noticias">
-                    
-                 </ul>
+                <h1>Noticias</h1>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada">Portada</a>
                 <a href="#" class="ico-noticias active">Noticias</a>
                 <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
                 <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+                <a href="#seccion_info" class="ico-info">Info</a>
             </div>
         </div>
 
@@ -53,18 +53,17 @@
         
         <div data-role="page" id="seccion_articulos">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <ul id="listado_articulos">
-                    
-                 </ul>
+                <h1>Articulos</h1>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada">Portada</a>
                 <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
                 <a href="#" class="ico-articulos active">Artículos</a>
                 <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+                <a href="#seccion_info" class="ico-info">Info</a>
             </div>
         </div>
 
@@ -72,18 +71,35 @@
         
         <div data-role="page" id="seccion_tareas">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <ul id="listado_tareas">
-                    
-                 </ul>
+                <h1>Tareas</h1>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada">Portada</a>
                 <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
                 <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
                 <a href="#" class="ico-tareas active">Tareas</a>
+                <a href="#seccion_info" class="ico-info">Info</a>
+            </div>
+        </div>
+
+        <!-- INFORMACION -->
+        
+        <div data-role="page" id="seccion_info">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <div class="logoapp"></div>
+            </div>
+            <div role="main" class="ui-content">
+                <h1>Informacion</h1>
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <a href="#portada" class="ico-portada">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
+                <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+                <a href="#" class="ico-info active">Info</a>
             </div>
         </div>
 
@@ -92,7 +108,7 @@
         <div data-role="page" id="noticia">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ui-btn ui-btn-inline ui-btn-left" id="back_portada" data-direction="reverse"></a>
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
                 <article id="leer_noticia">
@@ -119,16 +135,10 @@
         <div data-role="page" id="imagenes">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#noticia" class="ui-btn ui-btn-inline ui-btn-left" id="back_portada" data-direction="reverse"></a>
-                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+                <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-<<<<<<< HEAD
                 <div class="galeria"></div>
-=======
-                <div class="galeria">
-                    
-                </div>
->>>>>>> 7b708d2e01c00a38a394365ba02521b2f8db751b
             </div>
         </div>
 

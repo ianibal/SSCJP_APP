@@ -101,19 +101,14 @@ a.ui-shadow{
 //HEADER
 div[data-role="header"]{
 	background:#cf3e3b !important;
-	border:none;
+	border:none !important;
 	height: 55px;
-	.ui-input-search{
-		margin: 5px 10px;
-		border:none;
-		box-shadow:none;
-		outline: none;
-		font-size:13px;
-		margin-right:55px;
-	}
-	.ui-input-search .ui-input-clear{
-		margin:-12px 2px 0 0 !important;
-	}
+}
+.logoapp{
+	background:url(../img/logo.png) no-repeat center center;
+	background-size:180px;
+	height: 55px;
+	width: 100%;
 }
 #back_portada{
 	background:url(../img/ico-flecha-l.png) no-repeat center center;
@@ -121,7 +116,7 @@ div[data-role="header"]{
 	width: 30px;
 	height: 30px;
 	padding:0;
-	margin: 6px 0 0 -5px;
+	margin: 10px 0 0 -5px;
 }
 //top
 #listado_portada li:first-child{
@@ -234,7 +229,7 @@ div[data-role="footer"]{
 	a.ui-btn, a.ui-btn:hover, a.ui-btn:active, a.ui-btn:visited{
 		float:left;
 		padding:5px 0;
-		width:25%;
+		width:20%;
 		text-align: center;
 		color:#828282;
 		font-size:11px;
@@ -257,6 +252,10 @@ div[data-role="footer"]{
 		background:url(../img/ico-tareas.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
+	a.ico-info{
+		background:url(../img/ico-info.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
 	a.ico-imagenes{
 		background:url(../img/ico-imagenes.png) no-repeat center 3px !important;
 		background-size:30px !important;
@@ -273,20 +272,24 @@ div[data-role="footer"]{
 		background:url(../img/ico-compartir.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-portada.active, div[data-role="footer"] a.ico-portada:active{
+	a.ico-portada.active, a.ico-portada:active{
 		background:url(../img/ico-portada-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-noticias.active, div[data-role="footer"] a.ico-noticias:active{
+	a.ico-noticias.active, a.ico-noticias:active{
 		background:url(../img/ico-noticias-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-articulos.active, div[data-role="footer"] a.ico-articulos:active{
+	a.ico-articulos.active, a.ico-articulos:active{
 		background:url(../img/ico-articulos-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-tareas.active, div[data-role="footer"] a.ico-tareas:active{
+	a.ico-tareas.active, a.ico-tareas:active{
 		background:url(../img/ico-tareas-a.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
+	a.ico-info.active, a.ico-info:active{
+		background:url(../img/ico-info-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
 }
@@ -347,13 +350,12 @@ div[data-role="footer"]{
 }
 .galeria{
 	div{
-		display: none;
-			img{
-			width: 100%;
+		display: none;	
+		img{
+		width: 100%;
 		}
 	}
 	div:first-child{
-		display: block;
+		display:block;
 	}
-	
 }

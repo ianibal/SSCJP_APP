@@ -72,20 +72,16 @@ $(document).ready(function() {
 		}
 	});
 });
+//GALERIA
+$(document).on( "pagechange", function(event){
+	var mitadAlturaPagina = ($(document).height()) / 2;
+	var mitadAlturaImagen = ($('.galeria div img').height()) / 2;
+	var margenNuevo = (mitadAlturaPagina - mitadAlturaImagen) - 55;
+
+	$('.galeria div').css('margin-top', margenNuevo+'px');
+});
 
 $(document).on("pagecreate",function(event){
-	$('#noticia div[data-role="header"] .ui-input-search, #imagenes div[data-role="header"] .ui-input-search').css('margin-left','35px');
-
-	//GALERIA
-	var mitadAlturaPagina = (($('#imagenes').height()) - 55) / 2;
-	
-	$('.galeria div').on('swipe', function(){
-		var alturaImagen = $('.galeria div img').height();
-		var margenDiv = mitadAlturaPagina - (alturaImagen / 2);
-
-		$('.galeria div').css('margin-top', margenDiv+'px');
-	});
-
 	//LEFT
 	$('.galeria div').on('swipeleft', function(){
 		$(this).hide();
