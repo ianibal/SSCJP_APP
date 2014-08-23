@@ -31,18 +31,20 @@ body {
     -webkit-user-select: none;               /* prevent copy paste, to allow, change 'none' to 'text' */
     font-family:RobotoLight, sans-serif;
     color:#464646;
-}
-li,ol,ul{
-	list-style: none;
-}
-div[role="main"]{
-	position:absolute;
-    top:55px;
-    z-index:1;
-    width:100%;
-    padding:0;
-    -webkit-overflow-scrolling:touch;
-    overflow:auto;
+
+    li,ol,ul{
+		list-style: none;
+	}
+
+	div[role="main"]{
+		position:absolute;
+	    top:55px;
+	    z-index:1;
+	    width:100%;
+	    padding:0;
+	    -webkit-overflow-scrolling:touch;
+	    overflow:auto;
+	}
 }
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
@@ -183,46 +185,48 @@ div[data-role="header"]{
 #listado_portada li{
 	padding: 20px 10px;
 	overflow:hidden;
-}
-#listado_portada li .imagen-lista{
-	float:left;
-	width:60px;
-	height:60px;
-	margin-right:10px;
-	overflow:hidden;
-	@include border_radius(50%);
-}
-#listado_portada li .imagen-lista img{
-	height:70px;
-	width:auto;
+
+	.imagen-lista{
+		float:left;
+		width:60px;
+		height:60px;
+		margin-right:10px;
+		overflow:hidden;
+		@include border_radius(50%);
+	}
+	.imagen-lista img{
+		height:70px;
+		width:auto;
+	}
+	h4{
+		font-size:18px;
+		color:#2b4c6a;
+	}
+	.datos-lista > span{
+		display:block;
+		font-size:11px;
+		color:#b4b4b4;
+		margin:5px 0;
+	}
+	.datos-lista > span span{
+		color:#b4b4b4;
+	}
+	.datos-lista{
+		border-bottom:1px solid #dcdcdc;
+		padding-bottom:10px;
+		float:right;
+		width:75%;
+	}
+	.datos-lista{
+		font-size:12px;
+		line-height: 16px;
+		color:#282828;
+	}
 }
 #listado_portada li:hover, #listado_portada li:active{
 	background:#f0f0f0;
 }
-#listado_portada li h4{
-	font-size:18px;
-	color:#2b4c6a;
-}
-#listado_portada li .datos-lista > span{
-	display:block;
-	font-size:11px;
-	color:#b4b4b4;
-	margin:5px 0;
-}
-#listado_portada li .datos-lista > span span{
-	color:#b4b4b4;
-}
-#listado_portada li .datos-lista{
-	border-bottom:1px solid #dcdcdc;
-	padding-bottom:10px;
-	float:right;
-	width:75%;
-}
-#listado_portada li .datos-lista{
-	font-size:12px;
-	line-height: 16px;
-	color:#282828;
-}
+
 //footer
 div[data-role="footer"]{
 	background:#f0f0f0 !important;
@@ -338,17 +342,18 @@ div[data-role="footer"]{
 	}
 }
 //GALERIA
+#imagenes{
+	background:black;
+}
 .galeria{
 	div{
-		width:21%;
-		height:50px;
-		overflow: hidden;
-		float:left;
-		margin: 1%;
-
-		img{
-			width:100%;
-			height: 100%;
+		display: none;
+			img{
+			width: 100%;
 		}
 	}
+	div:first-child{
+		display: block;
+	}
+	
 }

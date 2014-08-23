@@ -24,28 +24,66 @@
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#" class="ico-portada active">Portada</a>
-                <a href="#listados" class="ico-noticias">Noticias</a>
-                <a href="#listados" class="ico-articulos">Artículos</a>
-                <a href="#listados" class="ico-tareas">Tareas</a>
+                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
+                <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
             </div>
         </div>
 
-        <!-- LISTADOS -->
+        <!-- NOTICIAS -->
         
-        <div data-role="page" id="listados">
+        <div data-role="page" id="seccion_noticias">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
             </div>
             <div role="main" class="ui-content">
-                <ul id="listados_lista">
+                <ul id="listado_noticias">
                     
                  </ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada">Portada</a>
-                <a href="#" class="ico-noticias">Noticias</a>
-                <a href="#" class="ico-articulos">Artículos</a>
-                <a href="#" class="ico-tareas">Tareas</a>
+                <a href="#" class="ico-noticias active">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
+                <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+            </div>
+        </div>
+
+        <!-- ARTICULOS -->
+        
+        <div data-role="page" id="seccion_articulos">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+            </div>
+            <div role="main" class="ui-content">
+                <ul id="listado_articulos">
+                    
+                 </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <a href="#portada" class="ico-portada">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
+                <a href="#" class="ico-articulos active">Artículos</a>
+                <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+            </div>
+        </div>
+
+        <!-- TAREAS -->
+        
+        <div data-role="page" id="seccion_tareas">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
+            </div>
+            <div role="main" class="ui-content">
+                <ul id="listado_tareas">
+                    
+                 </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
+                <a href="#portada" class="ico-portada">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
+                <a href="#" class="ico-tareas active">Tareas</a>
             </div>
         </div>
 
@@ -84,8 +122,7 @@
                 <input type="search" name="buscar" id="buscar" value="" placeholder="Buscar...">
             </div>
             <div role="main" class="ui-content">
-                <div class="galeria">
-                </div>
+                <div class="galeria"></div>
             </div>
         </div>
 
