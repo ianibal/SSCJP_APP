@@ -67,10 +67,10 @@ $(document).ready(function() {
 			        + flickrPhoto.server + '/' + flickrPhoto.id + '_' + flickrPhoto.secret + ".jpg";            
 
 			        var a_href = "http://www.flickr.com/photos/" + data.photoset.owner + "/" + flickrPhoto.id + "/";
-			       	var laImagen =
-			       	"<li><a href='"+basePhotoURL+"'><img src='"+basePhotoURL+"'</a></li>";
-			       	$(laImagen).appendTo('.galeria');
-			        //$("<a>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<li></li>"));
+			        //$("<img/>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<div></div>"));
+			        var laImagen =
+			        "<div style='background:url("+basePhotoURL+") no-repeat center center;background-size:100%;'></div>";
+			        $(laImagen).appendTo('.galeria');
 				});
 			});			
 
@@ -93,35 +93,30 @@ $(document).ready(function() {
 			$('#listado_portada li:first .datos-lista > span').css('background','#fdab50');
 		}
 	});
+
+	//adelante
+	$('.galeria-adelante').click(function(){
+		$('.galeria div.active').next().addClass('active');
+		$('.galeria div.active:last').prev().removeClass('active');
+
+		$('.galeria div').fadeOut();
+		$('.galeria div.active').fadeIn();
+	});
+	
+	//atras
+	$('.galeria-atras').click(function(){
+		$('.galeria div.active').prev().addClass('active');
+		$('.galeria div.active:first').next().removeClass('active');
+
+		$('.galeria div').fadeOut();
+		$('.galeria div.active').fadeIn();
+	});
 });
 
 //GALERIA
-/*$(document).on( "pagechange", function(event){
-	var mitadAlturaPagina = ($(document).height()) / 2;
-	var mitadAlturaImagen = ($('.galeria div img').height()) / 2;
-	var margenNuevo = (mitadAlturaPagina - mitadAlturaImagen) - 55;
-
-	$('.galeria div').css('margin-top', margenNuevo+'px');
-});*/
-/*
-$(document).on("pagecreate",function(event){
-	//LEFT
-	$('.galeria div').on('swipeleft', function(){
-		$(this).hide();
-		$(this).next().show();
-	});
-	$('.galeria div:last').on('swipeleft', function(){
-		$(this).hide();
-		$('.galeria div:first').show();
-	});
-
-	//RIGHT
-	$('.galeria div').on('swiperight', function(){
-		$(this).hide();
-		$(this).prev().show();
-	});
-	$('.galeria div:first').on('swiperight', function(){
-		$(this).hide();
-		$('.galeria div:last').show();
-	});
-});*/
+$(document).on( "pagechange", function(event){
+	var alturaPagina = ($(document).height()) - 95; 
+	$('.galeria div').css('height', alturaPagina+'px');
+	$('.galeria div:first').addClass('active');
+	$('.galeria div.active').show();
+});

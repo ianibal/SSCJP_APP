@@ -275,6 +275,14 @@ div[data-role="footer"]{
 		background:url(../img/ico-compartir.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
+	a.ico-adelante{
+		background:url(../img/ico-adelante.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
+	a.ico-atras{
+		background:url(../img/ico-atras.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
 	a.ico-portada.active, a.ico-portada:active{
 		background:url(../img/ico-portada-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
@@ -351,7 +359,7 @@ div[data-role="footer"]{
 		width: 55px;
 	}
 }
-//ico-info
+//info
 #seccion_info{
 	section{
 		padding-bottom: 100px;
@@ -377,5 +385,24 @@ div[data-role="footer"]{
 			display:block;
 			margin-top: 7px;
 		}
+	}
+}
+//galeria
+#imagenes div[role="main"]{
+	background:black;
+}
+.galeria{
+	position: relative;
+	width:100%;
+	height: 100%;
+	div{
+		width: 100%;
+		display: none;
+		@include anim_transicion_ease(0.3s);
+	}
+}
+#footer-galeria{
+	a.ui-btn, a.ui-btn:hover, a.ui-btn:active, a.ui-btn:visited{
+		width:50%;	
 	}
 }
