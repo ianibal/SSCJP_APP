@@ -20,8 +20,6 @@ $(document).ready(function() {
 			+"</a>"
 			+"</li>";
 
-			$(newLi).appendTo("#listado_portada");
-
 			//noticias
 			if(tipoN === 'Noticias'){
 				$('#listado_noticias').empty()
@@ -39,6 +37,8 @@ $(document).ready(function() {
 				$('#listado_tareas').empty()
 				$(newLi).appendTo("#listado_tareas");
 			}
+
+			$(newLi).appendTo("#listado_portada");
 		}
 
 		//detalle
@@ -99,14 +99,13 @@ $(document).ready(function() {
 });
 
 //GALERIA
-$(document).on( "pagechange", function(event){
-	/*var mitadAlturaPagina = ($(document).height()) / 2;
+/*$(document).on( "pagechange", function(event){
+	var mitadAlturaPagina = ($(document).height()) / 2;
 	var mitadAlturaImagen = ($('.galeria div img').height()) / 2;
 	var margenNuevo = (mitadAlturaPagina - mitadAlturaImagen) - 55;
 
-	$('.galeria div').css('margin-top', margenNuevo+'px');*/
-	$('.galeria').imageflip();
-});
+	$('.galeria div').css('margin-top', margenNuevo+'px');
+});*/
 /*
 $(document).on("pagecreate",function(event){
 	//LEFT

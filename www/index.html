@@ -18,7 +18,7 @@
                 <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <ul id="listado_portada">
+                <ul id="listado_portada" class="listados">
                     
                  </ul>
             </div>
@@ -38,8 +38,7 @@
                 <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <h1>Noticias</h1>
-                <ul id="listado_noticias"></ul>
+                <ul id="listado_noticias" data-autodividers="true" class="listados"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
@@ -57,8 +56,7 @@
                 <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <h1>Articulos</h1>
-                <ul id="listado_articulos"></ul>
+                <ul id="listado_articulos" class="listados"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
@@ -76,8 +74,7 @@
                 <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <h1>Tareas</h1>
-                <ul id="listado_tareas"></ul>
+                <ul id="listado_tareas" class="listados"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
@@ -149,12 +146,6 @@
         <script src="cordova.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.mobile-1.4.2.min.js"></script>
-        <script src="js/imageflip.mini.js"></script>
         <script src="js/main.js"></script>
-        <script type="text/javascript">
-$( document ).delegate("#portada", "pageinit", function() {
-    $('.galeria').imageflip()
-})
-</script>
     </body>
 </html>
