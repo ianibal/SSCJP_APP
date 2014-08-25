@@ -1,11 +1,13 @@
 $(document).ready(function() {
-	//JSON
 	var url="http://www.siervaspadreyermo.org/app/ws/ws.php";
 	$.getJSON(url,function(data){
-		//noticias portada
 		var noticiasPortada = data[0].noticias;
+
 		for(i = 0; i < noticiasPortada.length; i++){
 			//console.log(noticiasPortada[i].titulo)
+			var tipoN = noticiasPortada[i].tipo_noticia;
+
+			//portada
 			var newLi =
 			"<li>"
 			+"<a href='#noticia' data-link='"+i+"'>"
@@ -19,8 +21,27 @@ $(document).ready(function() {
 			+"</li>";
 
 			$(newLi).appendTo("#listado_portada");
+
+			//noticias
+			if(tipoN === 'Noticias'){
+				$('#listado_noticias').empty()
+				$(newLi).appendTo("#listado_noticias");
+			}	
+		
+			//articulos
+			if(tipoN === 'Artículos'){
+				$('#listado_articulos').empty()
+				$(newLi).appendTo("#listado_articulos");
+			}
+
+			//tareas
+			if(tipoN === 'Tareas'){
+				$('#listado_tareas').empty()
+				$(newLi).appendTo("#listado_tareas");
+			}
 		}
 
+		//detalle
 		$('a[href=#noticia]').click(function(){
 			var noticiaDetalle = $(this).attr('data-link');
 			
@@ -49,7 +70,10 @@ $(document).ready(function() {
 			        + flickrPhoto.server + '/' + flickrPhoto.id + '_' + flickrPhoto.secret + ".jpg";            
 
 			        var a_href = "http://www.flickr.com/photos/" + data.photoset.owner + "/" + flickrPhoto.id + "/";
-			        $("<img/>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<div class='galeria_item'></div>"));
+			       	var laImagen =
+			       	"<li><a href='"+basePhotoURL+"'><img src='"+basePhotoURL+"'</a></li>";
+			       	$(laImagen).appendTo('.galeria');
+			        //$("<a>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<li></li>"));
 				});
 			});			
 
@@ -57,7 +81,8 @@ $(document).ready(function() {
 			$(newVideo).appendTo("#videoplayer");
 			$(newAudio).appendTo("#audioplayer");			
 		});
-
+		
+		//colores portada
 		var colorPortada = Math.floor((Math.random() * 10) + 1);
 
 		if(colorPortada > 7){
@@ -72,15 +97,17 @@ $(document).ready(function() {
 		}
 	});
 });
+
 //GALERIA
 $(document).on( "pagechange", function(event){
-	var mitadAlturaPagina = ($(document).height()) / 2;
+	/*var mitadAlturaPagina = ($(document).height()) / 2;
 	var mitadAlturaImagen = ($('.galeria div img').height()) / 2;
 	var margenNuevo = (mitadAlturaPagina - mitadAlturaImagen) - 55;
 
-	$('.galeria div').css('margin-top', margenNuevo+'px');
+	$('.galeria div').css('margin-top', margenNuevo+'px');*/
+	$('.galeria').imageflip();
 });
-
+/*
 $(document).on("pagecreate",function(event){
 	//LEFT
 	$('.galeria div').on('swipeleft', function(){
@@ -101,4 +128,4 @@ $(document).on("pagecreate",function(event){
 		$(this).hide();
 		$('.galeria div:last').show();
 	});
-});
+});*/

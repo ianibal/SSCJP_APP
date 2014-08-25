@@ -39,9 +39,10 @@
             </div>
             <div role="main" class="ui-content">
                 <h1>Noticias</h1>
+                <ul id="listado_noticias"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <a href="#portada" class="ico-portada">Portada</a>
+                <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
                 <a href="#" class="ico-noticias active">Noticias</a>
                 <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
                 <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
@@ -57,10 +58,11 @@
             </div>
             <div role="main" class="ui-content">
                 <h1>Articulos</h1>
+                <ul id="listado_articulos"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <a href="#portada" class="ico-portada">Portada</a>
-                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
+                <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias" data-direction="reverse">Noticias</a>
                 <a href="#" class="ico-articulos active">Artículos</a>
                 <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
                 <a href="#seccion_info" class="ico-info">Info</a>
@@ -75,11 +77,12 @@
             </div>
             <div role="main" class="ui-content">
                 <h1>Tareas</h1>
+                <ul id="listado_tareas"></ul>
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <a href="#portada" class="ico-portada">Portada</a>
-                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
-                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
+                <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias" data-direction="reverse">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos" data-direction="reverse">Artículos</a>
                 <a href="#" class="ico-tareas active">Tareas</a>
                 <a href="#seccion_info" class="ico-info">Info</a>
             </div>
@@ -93,12 +96,13 @@
             </div>
             <div role="main" class="ui-content">
                 <h1>Informacion</h1>
+                SSCJP
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
-                <a href="#portada" class="ico-portada">Portada</a>
-                <a href="#seccion_noticias" class="ico-noticias">Noticias</a>
-                <a href="#seccion_articulos" class="ico-articulos">Artículos</a>
-                <a href="#seccion_tareas" class="ico-tareas">Tareas</a>
+                <a href="#portada" class="ico-portada" data-direction="reverse">Portada</a>
+                <a href="#seccion_noticias" class="ico-noticias" data-direction="reverse">Noticias</a>
+                <a href="#seccion_articulos" class="ico-articulos" data-direction="reverse">Artículos</a>
+                <a href="#seccion_tareas" class="ico-tareas" data-direction="reverse">Tareas</a>
                 <a href="#" class="ico-info active">Info</a>
             </div>
         </div>
@@ -138,13 +142,19 @@
                 <div class="logoapp"></div>
             </div>
             <div role="main" class="ui-content">
-                <div class="galeria"></div>
+                <ul class="galeria"></ul>
             </div>
         </div>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.mobile-1.4.2.min.js"></script>
+        <script src="js/imageflip.mini.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+$( document ).delegate("#portada", "pageinit", function() {
+    $('.galeria').imageflip()
+})
+</script>
     </body>
 </html>
