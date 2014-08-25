@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var noticiasPortada = data[0].noticias;
 
 		for(i = 0; i < noticiasPortada.length; i++){
-			//console.log(noticiasPortada[i].titulo)
+			
 			var tipoN = noticiasPortada[i].tipo_noticia;
 
 			//portada
@@ -22,19 +22,16 @@ $(document).ready(function() {
 
 			//noticias
 			if(tipoN === 'Noticias'){
-				$('#listado_noticias').empty()
 				$(newLi).appendTo("#listado_noticias");
 			}	
 		
 			//articulos
 			if(tipoN === 'Artículos'){
-				$('#listado_articulos').empty()
 				$(newLi).appendTo("#listado_articulos");
 			}
 
 			//tareas
 			if(tipoN === 'Tareas'){
-				$('#listado_tareas').empty()
 				$(newLi).appendTo("#listado_tareas");
 			}
 
