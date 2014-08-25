@@ -115,7 +115,7 @@ $(document).ready(function() {
 
 //GALERIA
 $(document).on( "pagechange", function(event){
-	var alturaPagina = ($(document).height()) - 95; 
+	var alturaPagina = ($(document).height()) - 85; 
 	$('.galeria div').css('height', alturaPagina+'px');
 	$('.galeria div:first').addClass('active');
 	$('.galeria div.active').show();

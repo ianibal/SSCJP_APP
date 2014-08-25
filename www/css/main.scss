@@ -104,6 +104,12 @@ div[data-role="header"]{
 	border:none !important;
 	height: 55px;
 }
+a.ico-compartir{
+	width: 30px;
+	height: 30px;
+	background:url(../img/ico-compartir.png) no-repeat center center !important;
+	background-size:25px !important;
+}
 .logoapp{
 	background:url(../img/logo.png) no-repeat center center;
 	background-size:180px;
@@ -271,16 +277,12 @@ div[data-role="footer"]{
 		background:url(../img/ico-audio.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-compartir{
-		background:url(../img/ico-compartir.png) no-repeat center 3px !important;
+	a.galeria-adelante{
+		background:url(../img/ico-siguiente.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
-	a.ico-adelante{
-		background:url(../img/ico-adelante.png) no-repeat center 3px !important;
-		background-size:30px !important;
-	}
-	a.ico-atras{
-		background:url(../img/ico-atras.png) no-repeat center 3px !important;
+	a.galeria-atras{
+		background:url(../img/ico-anterior.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
 	a.ico-portada.active, a.ico-portada:active{
@@ -306,7 +308,7 @@ div[data-role="footer"]{
 }
 #noticia_footer{
 	a.ui-btn, a.ui-btn:hover, a.ui-btn:active, a.ui-btn:visited{
-		width:25%;	
+		width:33%;	
 	}
 }
 //noticia
@@ -403,6 +405,7 @@ div[data-role="footer"]{
 }
 #footer-galeria{
 	a.ui-btn, a.ui-btn:hover, a.ui-btn:active, a.ui-btn:visited{
-		width:50%;	
+		width:50%;
+		height: 28px;
 	}
 }
