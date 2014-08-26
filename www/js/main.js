@@ -1,3 +1,9 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    navigator.splashscreen.hide();
+}
+
 $(document).ready(function() {
 	var url="http://www.siervaspadreyermo.org/app/ws/ws.php";
 	$.getJSON(url,function(data){
