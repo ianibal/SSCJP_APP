@@ -305,6 +305,18 @@ div[data-role="footer"]{
 		background:url(../img/ico-info-a.png) no-repeat center 3px !important;
 		background-size:30px !important;
 	}
+	a.ico-video.inactive{
+		background:url(../img/ico-video-i.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
+	a.ico-audio.inactive{
+		background:url(../img/ico-audio-i.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
+	a.ico-imagenes.inactive{
+		background:url(../img/ico-imagenes-i.png) no-repeat center 3px !important;
+		background-size:30px !important;
+	}
 }
 #noticia_footer{
 	a.ui-btn, a.ui-btn:hover, a.ui-btn:active, a.ui-btn:visited{
