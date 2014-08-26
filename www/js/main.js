@@ -10,7 +10,7 @@ $(document).ready(function() {
 			//portada
 			var newLi =
 			"<li>"
-			+"<a href='#noticia' data-link='"+i+"'>"
+			+"<a href='#noticia' class='detalleNoticiasBtn' data-link='"+i+"'>"
 			+"<div class='imagen-lista'><img src='http://www.siervaspadreyermo.org/app/"+noticiasPortada[i].foto1+"'></div>"
 			+"<div class='datos-lista'>"
 			+"<h4>"+noticiasPortada[i].titulo+"</h4>"
@@ -39,7 +39,7 @@ $(document).ready(function() {
 		}
 
 		//detalle
-		$('a[href=#noticia]').click(function(){
+		$('.detalleNoticiasBtn').click(function(){
 			var noticiaDetalle = $(this).attr('data-link');
 			
 			var newItem =
@@ -76,7 +76,19 @@ $(document).ready(function() {
 
 			$(newItem).appendTo("#leer_noticia");
 			$(newVideo).appendTo("#videoplayer");
-			$(newAudio).appendTo("#audioplayer");			
+			$(newAudio).appendTo("#audioplayer");	
+
+			var pageId = $(this).parent().parent().parent().parent().attr('id');
+
+			if(pageId === 'portada'){
+				$('#detalle_back').attr('href','#portada');
+			}else if(pageId === 'seccion_noticias'){
+				$('#detalle_back').attr('href','#seccion_noticias');
+			}else if(pageId === 'seccion_articulos'){
+				$('#detalle_back').attr('href','#seccion_articulos');
+			}else if(pageId === 'seccion_tareas'){
+				$('#detalle_back').attr('href','#seccion_tareas');
+			}
 		});
 		
 		//colores portada
