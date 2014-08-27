@@ -1,10 +1,29 @@
-$(document).ready(function() {
+//splash android
+document.addEventListener('deviceready', onDeviceReady, false);
+function onDeviceReady(){
+    navigator.splashscreen.hide();
+}
+
+//loader
+$(document).on('pagebeforecreate', '[data-role="page"]', function(){     
+    var interval = setInterval(function(){
+        $.mobile.loading('show');        clearInterval(interval);
+    },1);    
+});
+
+$(document).on('pageshow', '[data-role="page"]', function(){  
+    var interval = setInterval(function(){
+        $.mobile.loading('hide');
+        clearInterval(interval);
+    },300);      
+});
+
+$(document).ready(function(){
 	var url="http://www.siervaspadreyermo.org/app/ws/ws.php";
 	$.getJSON(url,function(data){
 		var noticiasPortada = data[0].noticias;
 
 		for(i = 0; i < noticiasPortada.length; i++){
-			
 			var tipoN = noticiasPortada[i].tipo_noticia;
 
 			//portada
@@ -48,36 +67,6 @@ $(document).ready(function() {
 			+"<div class='img-not'><img src='http://www.siervaspadreyermo.org/app/"+noticiasPortada[noticiaDetalle].foto1+"'></div>"
 			+"<div class='res-not'>"+noticiasPortada[noticiaDetalle].resumen+"</div>";
 
-			var newVideo =
-			"<iframe width='100%' height='300px' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].video+"?rel=0 frameborder='0' allowfullscreen></iframe>";
-
-			var newAudio =
-			"<iframe width='100%' height='300px' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].audio+"?rel=0 frameborder='0' allowfullscreen></iframe>";
-
-			//LIMPIA
-			$('#leer_noticia, #videoplayer, #audioplayer, .galeria').empty()
-
-			//FLICKR
-			var apiKey = '9d5c2158fc84fa7bfb39facf94799f94'; //secreto: d2c2ec5c1a081ac1
-			var fotoSet = noticiasPortada[noticiaDetalle].galeria;
-			var fotosUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+apiKey+"&photoset_id="+fotoSet+"&format=json&jsoncallback=?";
-			$.getJSON(fotosUrl,function(data){
-				$.each(data.photoset.photo, function(i, flickrPhoto){
-			        var basePhotoURL = 'http://farm' + flickrPhoto.farm + '.static.flickr.com/'
-			        + flickrPhoto.server + '/' + flickrPhoto.id + '_' + flickrPhoto.secret + ".jpg";            
-
-			        var a_href = "http://www.flickr.com/photos/" + data.photoset.owner + "/" + flickrPhoto.id + "/";
-			        //$("<img/>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<div></div>"));
-			        var laImagen =
-			        "<div style='background:url("+basePhotoURL+") no-repeat center center;background-size:100%;'></div>";
-			        $(laImagen).appendTo('.galeria');
-				});
-			});			
-
-			$(newItem).appendTo("#leer_noticia");
-			$(newVideo).appendTo("#videoplayer");
-			$(newAudio).appendTo("#audioplayer");	
-
 			var pageId = $(this).parent().parent().parent().parent().attr('id');
 
 			if(pageId === 'portada'){
@@ -89,14 +78,58 @@ $(document).ready(function() {
 			}else if(pageId === 'seccion_tareas'){
 				$('#detalle_back').attr('href','#seccion_tareas');
 			}
-		});
+
+			if(noticiasPortada[noticiaDetalle].video === ''){
+				$('.ico-video').attr('href','#').addClass('inactive');
+			}else{
+				$('.ico-video').attr('href','#video_popup').removeClass('inactive');
+				var newVideo =
+				"<iframe width='100%' height='300px' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].video+"?rel=0 frameborder='0' allowfullscreen></iframe>";
+			}
+
+			if(noticiasPortada[noticiaDetalle].audio === ''){
+				$('.ico-audio').attr('href','#').addClass('inactive');
+			}else{
+				$('.ico-audio').attr('href','#audio_popup').removeClass('inactive');
+				var newAudio =
+				"<iframe width='100%' height='300px' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].audio+"?rel=0 frameborder='0' allowfullscreen></iframe>";
+			}
+
+			//LIMPIA
+			$('#leer_noticia, #videoplayer, #audioplayer, .galeria').empty()
+
+			if(noticiasPortada[noticiaDetalle].galeria === ''){
+				$('.ico-imagenes').attr('href','#').addClass('inactive');
+			}else{
+				$('.ico-imagenes').attr('href','#imagenes').removeClass('inactive');
+				//FLICKR
+				var apiKey = '9d5c2158fc84fa7bfb39facf94799f94'; //secreto: d2c2ec5c1a081ac1
+				var fotoSet = noticiasPortada[noticiaDetalle].galeria;
+				var fotosUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+apiKey+"&photoset_id="+fotoSet+"&format=json&jsoncallback=?";
+				$.getJSON(fotosUrl,function(data){
+					$.each(data.photoset.photo, function(i, flickrPhoto){
+				        var basePhotoURL = 'http://farm' + flickrPhoto.farm + '.static.flickr.com/'
+				        + flickrPhoto.server + '/' + flickrPhoto.id + '_' + flickrPhoto.secret + ".jpg";            
+
+				        var a_href = "http://www.flickr.com/photos/" + data.photoset.owner + "/" + flickrPhoto.id + "/";
+				        //$("<img/>").attr("src", basePhotoURL).appendTo(".galeria").wrap(("<div></div>"));
+				        var laImagen =
+				        "<div style='background:url("+basePhotoURL+") no-repeat center center;background-size:100%;'></div>";
+				        $(laImagen).appendTo('.galeria');
+					});
+				});
+			}
+
+			$(newItem).appendTo("#leer_noticia");
+			$(newVideo).appendTo("#videoplayer");
+			$(newAudio).appendTo("#audioplayer");
 		
 		//colores portada
 		var colorPortada = Math.floor((Math.random() * 10) + 1);
 
 		if(colorPortada > 7){
 			$('h4:first').css('background','#335b7e');
-				$('#listado_portada li:first .datos-lista > span').css('background','#71b8f8');
+			$('#listado_portada li:first .datos-lista > span').css('background','#71b8f8');
 		}else if(colorPortada < 4){
 			$('h4:first').css('background','#942b29');
 			$('#listado_portada li:first .datos-lista > span').css('background','#f74a47');
@@ -123,12 +156,12 @@ $(document).ready(function() {
 		$('.galeria div').fadeOut();
 		$('.galeria div.active').fadeIn();
 	});
-});
 
-//GALERIA
-$(document).on( "pagechange", function(event){
-	var alturaPagina = ($(document).height()) - 85; 
-	$('.galeria div').css('height', alturaPagina+'px');
-	$('.galeria div:first').addClass('active');
-	$('.galeria div.active').show();
+	//galeria
+	$('.ico-imagenes').click(function(){
+		var alturaPagina = ($(document).height()) - 85; 
+		$('.galeria div').css('height', alturaPagina+'px');
+		$('.galeria div:first').addClass('active');
+		$('.galeria div.active').show();
+	});
 });
