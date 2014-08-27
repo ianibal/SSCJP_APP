@@ -120,10 +120,12 @@ $(document).ready(function(){
 				});
 			}
 
-			$(newItem).appendTo("#leer_noticia");
-			$(newVideo).appendTo("#videoplayer");
-			$(newAudio).appendTo("#audioplayer");
-		
+			$(newItem).appendTo('#leer_noticia');
+			$(newVideo).appendTo('#videoplayer');
+			$(newAudio).appendTo('#audioplayer');
+
+		});
+
 		//colores portada
 		var colorPortada = Math.floor((Math.random() * 10) + 1);
 
