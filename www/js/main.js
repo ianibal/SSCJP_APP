@@ -5,6 +5,14 @@ function onDeviceReady(){
 }
 
 //loader
+$.ajaxSetup({
+	timeout: 10000,
+		error: function(request, status, maybe_an_exception_object) {
+		if(status == 'timeout')
+			alert("Internet connection is down!");
+		}
+});
+
 $(document).on('pagebeforecreate', '[data-role="page"]', function(){     
     var interval = setInterval(function(){
         $.mobile.loading('show');        clearInterval(interval);
