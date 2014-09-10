@@ -33,10 +33,14 @@ $(document).ready(function(){
 
 		for(i = 0; i < noticiasPortada.length; i++){
 			var tipoN = noticiasPortada[i].tipo_noticia;
+			var sedeN = noticiasPortada[i].sede_noticia;
+			var temaN = noticiasPortada[i].tema_noticia;
 
+			sedeN = sedeN.replace(/\s/g,'');
+			temaN = temaN.replace(/\s/g,'');
 			//portada
 			var newLi =
-			"<li>"
+			"<li class='"+sedeN+temaN+"'>"
 			+"<a href='#noticia' class='detalleNoticiasBtn' data-link='"+i+"'>"
 			+"<div class='imagen-lista'><img src='http://www.siervaspadreyermo.org/app/"+noticiasPortada[i].foto1+"'></div>"
 			+"<div class='datos-lista'>"
@@ -50,11 +54,29 @@ $(document).ready(function(){
 			//noticias
 			if(tipoN === 'Noticias'){
 				$(newLi).appendTo("#listado_noticias");
+		
+				var container = $("#listado_noticias");    
+				 container.find("li").sort(function (a, b) {
+				     var classA = $(a).attr("class");
+				     var classB = $(b).attr("class");
+				     if (classA > classB) return 1;
+				     if (classA < classB) return -1;
+				     return 0;
+				 }).appendTo(container);
 			}	
 		
 			//articulos
 			if(tipoN === 'Artículos'){
 				$(newLi).appendTo("#listado_articulos");
+				
+				var container = $("#listado_articulos");    
+				 container.find("li").sort(function (a, b) {
+				     var classA = $(a).attr("class");
+				     var classB = $(b).attr("class");
+				     if (classA > classB) return 1;
+				     if (classA < classB) return -1;
+				     return 0;
+				 }).appendTo(container);
 			}
 
 			//tareas
@@ -147,6 +169,15 @@ $(document).ready(function(){
 			$('h4:first').css('background','#d77f1e');
 			$('#listado_portada li:first .datos-lista > span').css('background','#fdab50');
 		}
+
+		/*var minHeaderN = data[1].sedes;
+		for(i = 0; i < minHeaderN.length; i++){
+			var minHeaderC = minHeaderN[i].sede.replace(/\s/g,'');
+			var listD =
+			"<li data-role='list-divider' class='"+minHeaderC+"'>"+minHeaderN[i].sede+"</li>";
+
+			$(listD).appendTo('#listado_noticias');
+		}*/
 	});
 
 	//adelante
