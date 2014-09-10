@@ -9,7 +9,7 @@ $.ajaxSetup({
 	timeout: 10000,
 		error: function(request, status, maybe_an_exception_object) {
 		if(status == 'timeout')
-			alert("Internet connection is down!");
+			alert("No hay conexión a Internet");
 		}
 });
 
@@ -45,6 +45,7 @@ $(document).ready(function(){
 			+"<div class='imagen-lista'><img src='http://www.siervaspadreyermo.org/app/"+noticiasPortada[i].foto1+"'></div>"
 			+"<div class='datos-lista'>"
 			+"<h4>"+noticiasPortada[i].titulo+"</h4>"
+			+"<h3>"+noticiasPortada[i].sede_noticia+noticiasPortada[i].tema_noticia+",&nbsp;</h3>"
 			+"<span>"+noticiasPortada[i].dia_fecha+"<span>"+noticiasPortada[i].mes_fecha+noticiasPortada[i].anio_fecha+"</span>"+"</span>"
 			+"<div>"+(noticiasPortada[i].resumen).slice(0,99)+"..."+"</div>"
 			+"</div>"
@@ -82,9 +83,11 @@ $(document).ready(function(){
 			//tareas
 			if(tipoN === 'Tareas'){
 				$(newLi).appendTo("#listado_tareas");
+				$('#listado_tareas li h3').hide();
 			}
 
 			$(newLi).appendTo("#listado_portada");
+			$('#listado_portada li h3').hide();
 		}
 
 		//detalle

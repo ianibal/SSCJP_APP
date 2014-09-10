@@ -231,11 +231,16 @@ a.back_page{
 			padding-bottom:10px;
 			float:right;
 			width:75%;
-		}
-		.datos-lista{
 			font-size:12px;
 			line-height: 16px;
 			color:#282828;
+
+			h3{
+				float:left;
+				font-size:11px;
+				color:#71b8f8;
+				margin-top: 5px;
+			}
 		}
 	}
 }
