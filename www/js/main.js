@@ -172,15 +172,6 @@ $(document).ready(function(){
 			$('h4:first').css('background','#d77f1e');
 			$('#listado_portada li:first .datos-lista > span').css('background','#fdab50');
 		}
-
-		/*var minHeaderN = data[1].sedes;
-		for(i = 0; i < minHeaderN.length; i++){
-			var minHeaderC = minHeaderN[i].sede.replace(/\s/g,'');
-			var listD =
-			"<li data-role='list-divider' class='"+minHeaderC+"'>"+minHeaderN[i].sede+"</li>";
-
-			$(listD).appendTo('#listado_noticias');
-		}*/
 	});
 
 	//adelante
