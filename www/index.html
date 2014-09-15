@@ -133,14 +133,28 @@
             </div>
             <div data-role="footer" id="noticia_footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false">
                 <a href='#imagenes' class='ico-imagenes'>Im&aacute;genes</a>
-                <a href='#video_popup' class='ico-video' data-rel="popup" data-position-to="window" data-transition="pop">Video</a>
+                <!--<a href='#video_popup' class='ico-video' data-rel="popup" data-position-to="window" data-transition="pop">Video</a>-->
+                <a href='#' class='ico-video'>Video</a>
                 <a href='#audio_popup' class='ico-audio' data-rel="popup" data-position-to="window" data-transition="pop">Audio</a>
-                <div data-role="popup" id="video_popup" data-overlay-theme="b" data-theme="b">
+                <!--<div data-role="popup" id="video_popup" data-overlay-theme="b" data-theme="b">
                     <div id="videoplayer"></div>
-                </div>
+                </div>-->
                 <div data-role="popup" id="audio_popup" data-overlay-theme="b" data-theme="b">
                     <div id="audioplayer"></div>
                 </div>
+            </div>
+        </div>
+
+        <!-- VIDEO -->
+
+        <div data-role="page" id="videoplayer">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="false" data-id="headerId">
+                <a href="#noticia" class="ui-btn ui-btn-inline ui-btn-left back_page" data-direction="reverse"></a>
+                <div class="logoapp"></div>
+                <a class="ico-compartir ui-btn-right" onclick="window.plugins.socialsharing.share('Estoy usando la App de las SSCJP (Siervas del Sagrado Coraz&oacute;n de Jes&uacute;s y de los Pobres). Descargala tu tambi&eacute;n.', null, null, 'http://www.siervaspadreyermo.org/siervas_app.html')"></a>
+            </div>
+            <div role="main" class="ui-content">
+                <div class="videos"></div>
             </div>
         </div>
 

@@ -115,9 +115,9 @@ $(document).ready(function(){
 			if(noticiasPortada[noticiaDetalle].video === ''){
 				$('.ico-video').attr('href','#').addClass('inactive');
 			}else{
-				$('.ico-video').attr('href','#video_popup').removeClass('inactive');
+				$('.ico-video').attr('href','#videoplayer').removeClass('inactive');
 				var newVideo =
-				"<iframe width='100%' height='300px' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].video+"?rel=0 frameborder='0' allowfullscreen></iframe>";
+				"<iframe width='100%' height='100%' src='http://www.youtube.com/embed/"+noticiasPortada[noticiaDetalle].video+"?rel=0 frameborder='0' allowfullscreen></iframe>";
 			}
 
 			if(noticiasPortada[noticiaDetalle].audio === ''){
@@ -129,7 +129,7 @@ $(document).ready(function(){
 			}
 
 			//LIMPIA
-			$('#leer_noticia, #videoplayer, #audioplayer, .galeria').empty()
+			$('#leer_noticia, .videos, #audioplayer, .galeria').empty()
 
 			if(noticiasPortada[noticiaDetalle].galeria === ''){
 				$('.ico-imagenes').attr('href','#').addClass('inactive');
@@ -154,7 +154,7 @@ $(document).ready(function(){
 			}
 
 			$(newItem).appendTo('#leer_noticia');
-			$(newVideo).appendTo('#videoplayer');
+			$(newVideo).appendTo('.videos');
 			$(newAudio).appendTo('#audioplayer');
 
 		});
@@ -198,5 +198,9 @@ $(document).ready(function(){
 		$('.galeria div').css('height', alturaPagina+'px');
 		$('.galeria div:first').addClass('active');
 		$('.galeria div.active').show();
+	});
+	$('.ico-video').click(function(){
+		var alturaPagina = ($(document).height()) - 50; 
+		$('.videos').css('height', alturaPagina+'px');
 	});
 });
