@@ -199,8 +199,8 @@ $(document).ready(function(){
 		$('.galeria div:first').addClass('active');
 		$('.galeria div.active').show();
 	});
-	$('.ico-video').click(function(){
-		var alturaPagina = ($(document).height()) - 50; 
-		$('.videos').css('height', alturaPagina+'px');
+	$('.ico-video, .ico-audio').click(function(){
+		var alturaPagina = ($(document).height()) - 55; 
+		$('.videos, .audios').css('height', alturaPagina+'px');
 	});
 });
