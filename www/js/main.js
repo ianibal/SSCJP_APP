@@ -203,4 +203,5 @@ $(document).ready(function(){
 		var alturaPagina = ($(document).height()) - 55; 
 		$('.videos, .audios').css('height', alturaPagina+'px');
 	});
+
 });
