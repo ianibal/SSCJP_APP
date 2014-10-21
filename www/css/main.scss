@@ -36,6 +36,20 @@ body {
 		list-style: none;
 	}
 
+	/*div[role="main"]{
+		position:absolute;
+	    top:55px;
+	    z-index:1;
+	    width:100%;
+	    padding:0;
+	    overflow:auto;
+		-webkit-overflow-scrolling:touch;
+	}*/
+}
+//IOS
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5){
 	div[role="main"]{
 		position:absolute;
 	    top:55px;

@@ -204,4 +204,7 @@ $(document).ready(function(){
 		$('.videos, .audios').css('height', alturaPagina+'px');
 	});
 
+	//btn compartir
+	$('a.ico-compartir').removeClass('ui-shadow');
+
 });
